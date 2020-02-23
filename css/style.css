@@ -28,6 +28,23 @@ header {
     display: flex;
     justify-content: center;
     margin: 0.5em 0;
+    color: #fff;
+    font-size: 2em;
+}
+
+#big {
+    background-color: blueviolet;
+    height: 20em;
+    width: 70%;
+    opacity: 0.8;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+}
+
+#weather {
+    padding: 1em;
+    list-style-type: none;
 }
 
 .window {
@@ -35,14 +52,6 @@ header {
     width: 32%;
     background-color: chartreuse;
     opacity: 0.7;
-    border-radius: 3px;
-}
-
-.name {
-    background-color: blueviolet;
-    height: 20em;
-    width: 70%;
-    opacity: 0.8;
     border-radius: 3px;
 }
 
