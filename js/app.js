@@ -29,3 +29,4 @@ const getWeather = async () => {
 };
 
 getWeather();
+
