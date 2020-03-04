@@ -4,25 +4,29 @@
     box-sizing: border-box;
 }
 
+p {
+    font: 1.7em 'Rubik';
+    padding-top: 0.5em;
+}
+
+h1 {
+    font: 2em 'Quattrocento Sans';
+    padding-top: 0.5em;
+}
+
 body {
     background-color: darkblue;
-    
-    
-    
-    font-family: 'Assistant';
-    
+    /* font-family: 'Assistant'; */
 }
 
 header {
     display: flex;
     justify-content: space-between;
-    /* background-color: #ddf; */
-    /* padding: 1em; */
-    height: 5%;
+    padding: 1em;
+    height: 10vh;
     color: white;
     text-align: center;
-    width: 100%;
-    
+    width: 100%;    
     font-family: 'Raleway';
 }
 
@@ -30,26 +34,17 @@ header {
     width: 4em;
 }
 
-#middle {
-    height: 60%;
+main {
+    height: 88vh;
+    padding-bottom: 0.5em;
 }
 
-.part {
+.row {
     display: flex;
     justify-content: center;
-    margin: 1em 0;
+    margin: 0.5em;
     color: #fff;
-    font-size: 2em;
-}
-
-#big {
-    background-color: blueviolet;
-    height: 20em;
-    width: 70%;
-    /* opacity: 0.8; */
-    border-radius: 3px;
-    display: flex;
-    justify-content: center;
+    height: 50%;
 }
 
 #weather {
@@ -58,64 +53,38 @@ header {
     font-family: 'Noto Sans JP';
 }
 
-.window2 {
+.window {
     text-align: center;
-    width: 30%;
-   /*  opacity: 0.7; */
     border-radius: 3px;
-    margin: 0 1em 0 1em;
+    margin: 0.3em;
+    height:100%;
 }
-.ruokalista{
+
+.small-window {
+    width: 30%;
+}
+
+.big-window {
+    width: 70%;
+}
+
+#r1-w1{
     background-color: #ff5A00;
 }
-.random{
+#r1-w2{
     background-color: #F2F3F4;
     color: black;
-}
-.window1 {
-    text-align: center;
-    width: 70%;
-    /* opacity: 0.7; */
-    border-radius: 3px;
-}
-.info{
-    background-color: #0060a3;
     padding: 10px 0 0 10px;
-    font-family: 'Rubik';
 }
-.info h1{
-    font-family: 'Quattrocento Sans';
+#r1-w3 {
+    /* background-color: #EE8434; */
 }
-.info li{
-    text-align: start;
-}
-.media{
+#r2-w1 {
     background-color: #383D3B;
 }
-.window3 {
-    text-align: center;
-    width: 30%;
-  /*   opacity: 0.7; */
-    border-radius: 3px;
-    margin: 0 1em 0 1em;
+#r2-w2{
+    background-color: #0060a3;
 }
-.sää{
-    background-color: #EE8434;
-}
-.hsl{
+#r2-w3{
     background-color: #779FA1;
-}
-
-.carousel {
-    height: 15em;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-}
-
-footer {
-    background-color: #ddf;
-    padding: 2em;
-    height: 20%;
 }
