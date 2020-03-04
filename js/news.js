@@ -21,8 +21,9 @@ fetch(req)
 
 // ////////////////////////// TOIMII ////////////////////////////////////
 const showReport = async (report) => {
-    document.querySelector('#temp').innerHTML = ('<li>' + (report.posts.title) + '</li>');
-    document.querySelector('#wind').innerHTML = ('<li>' + (report.posts.text) + '</li>');
+    document.querySelector('#temp').innerHTML = ('<li>' + (report.posts[1].title) + '</li>');
+    document.querySelector('#wind').innerHTML = ('<li>' + (report.posts[2].title) + '</li>');
+    document.querySelector('#cloud').innerHTML = ('<li>' + (report.posts[6].title) + '</li>');
 }
 
 const getJsonMenu = async (menuUrl) => {
