@@ -107,3 +107,9 @@ main {
 #r2-w3{
     background-color: var(--color-6);
 }
+
+.hsl-list {
+    list-style-type: none;
+    font: 1.3em 'Rubik';
+    padding-top: 0.5em;
+}
