@@ -2,29 +2,26 @@ const showReport = async (report) => {
     const pnumber = report.teletext.page.number;
     const name = report.teletext.page.name;
     const time = report.teletext.page.time;
-    const subpage = report.teletext.page.subpage[0].content[0].line[7].Text;
-
     const loop = report.teletext.page.subpage[0].content[0].line;
 
-    for (let i = 0; i < loop.arrayLength; i++) {
-        //console.log(loop[i]);
-        return loop[i];
+    for (let i in loop) {
+        document.querySelector('#num').innerHTML = ('<li>' + (pnumber) + '</li>');
+        document.querySelector('#name').innerHTML = ('<li>' + (name) + '</li>');
+        document.querySelector('#time').innerHTML = ('<li>' + (time) + '</li>');
+        if(loop[i].Text != null)
+        document.querySelector('#subpage').innerHTML += ('<li>' + (loop[i].Text) + '</li>');
     }
 
-    document.querySelector('#num').innerHTML = ('<li>' + (pnumber) + '</li>');
-    document.querySelector('#name').innerHTML = ('<li>' + (name) + '</li>');
-    document.querySelector('#time').innerHTML = ('<li>' + (time) + '</li>');
-    document.querySelector('#subpage').innerHTML = ('<li>' + (loop) + '</li>');
-}
+};
 
 const getJsonMenu = async (menuUrl) => {
     let response;
-    try{
+    try {
         response = await fetch(`${menuUrl}`);
-        if (!response.ok){
+        if (!response.ok) {
             throw new Error(`HTTP ${response.status} ${response.statusText}`);
         }
-    } catch(error){
+    } catch (error) {
         console.log('Fetch error', error.message);
     }
     let news = await response.json();
