@@ -1,7 +1,9 @@
 'use strict';
 const apiUrl = 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql';
 
+let row = {};
 const schedule = [];
+
 const stopId = [
   4150202,
   4150228,
@@ -44,26 +46,28 @@ const getStopData = (id) => {
 };
 
 const showResult = () => {
-  for(let i in schedule){
-    const node = document.createElement('li');
-    const textnode = document.createTextNode(schedule[i]);
-    node.appendChild(textnode);
-    document.querySelector('.hsl-list').appendChild(node);
+  for (let i in schedule) {
+    document.querySelector('.hsl-list').innerHTML += (`<ul class="hsl-row">
+    <li class="hsl-time">${schedule[i].time}</li>
+    <li class="hsl-line">${schedule[i].line}</li>
+    <li class="hsl-destination">${schedule[i].destination}</li>
+    <li class="hsl-stop">${schedule[i].stop}</li>
+    </ul>`);
   }
 };
 // Present received data
 const makeArray = async (result) => {
   const stop = result.data.stop;
-  for (let i=0; i<2;i++) {
+  for (let i = 0; i < 2; i++) {
     const ride = await stop.stoptimesWithoutPatterns[i];
-    // schedule.push(`time: "${getTime(ride.scheduledDeparture)}", line: "${ride.trip.routeShortName}", 
-    //  destination: "${ride.headsign !== null ? ride.headsign : ride.trip.tripHeadsign}", stop: "${stop.name}"`);
-    // };
-    schedule.push(`${getTime(ride.scheduledDeparture)}, ${ride.trip.routeShortName}, 
-    ${ride.headsign !== null ? ride.headsign : ride.trip.tripHeadsign}, ${stop.name}`);
-   };
-    schedule.sort();
+    row = {
+      time: getTime(ride.scheduledDeparture), line: ride.trip.routeShortName,
+      destination: ride.headsign !== null ? ride.headsign : ride.trip.tripHeadsign, stop: stop.name
+    };
+    schedule.push(row);
   };
+  schedule.sort((a, b) => (a.time > b.time) ? 1 : -1)
+};
 
 // Fetch data from HSL
 const fetchData = async (i) => {
@@ -85,6 +89,7 @@ const hslQuery = async () => {
     const result = await response;
     makeArray(result);
   }
+  console.log(schedule);
   showResult();
 };
 

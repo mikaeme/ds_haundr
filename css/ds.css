@@ -112,4 +112,14 @@ main {
     list-style-type: none;
     font: 1.3em 'Rubik';
     padding-top: 0.5em;
+    text-align: left;
+}
+
+.hsl-row {
+    list-style-type: none;
+    display: inline-flex;
+}
+
+.hsl-row > li {
+    padding-right: 1em;
 }
