@@ -1,6 +1,20 @@
 const showReport = async (report) => {
-    document.querySelector('#temp').innerHTML = ('<li>' + (report.teletext.page.number) + '</li>');
-    document.querySelector('#wind').innerHTML = ('<li>' + (report.teletext.page.name) + '</li>');
+    const pnumber = report.teletext.page.number;
+    const name = report.teletext.page.name;
+    const time = report.teletext.page.time;
+    const subpage = report.teletext.page.subpage[0].content[0].line[7].Text;
+
+    const loop = report.teletext.page.subpage[0].content[0].line;
+
+    for (let i = 0; i < loop.arrayLength; i++) {
+        //console.log(loop[i]);
+        return loop[i];
+    }
+
+    document.querySelector('#num').innerHTML = ('<li>' + (pnumber) + '</li>');
+    document.querySelector('#name').innerHTML = ('<li>' + (name) + '</li>');
+    document.querySelector('#time').innerHTML = ('<li>' + (time) + '</li>');
+    document.querySelector('#subpage').innerHTML = ('<li>' + (loop) + '</li>');
 }
 
 const getJsonMenu = async (menuUrl) => {
