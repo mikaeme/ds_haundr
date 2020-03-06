@@ -59,7 +59,7 @@ const showResult = () => {
 };
 // Present received data
 const makeArray = async (result) => {
-  const stop = result.data.stop;
+  const stop = await result.data.stop;
   for (let i = 0; i < 2; i++) {
     const ride = await stop.stoptimesWithoutPatterns[i];
     row = {

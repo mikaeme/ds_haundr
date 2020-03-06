@@ -1,4 +1,4 @@
-const showReport = async (report) => {
+const showNews = async (report) => {
     const pnumber = report.teletext.page.number;
     const name = report.teletext.page.name;
     const time = report.teletext.page.time;
@@ -14,7 +14,7 @@ const showReport = async (report) => {
 
 };
 
-const getJsonMenu = async (menuUrl) => {
+const getJsonNews = async (menuUrl) => {
     let response;
     try {
         response = await fetch(`${menuUrl}`);
@@ -30,9 +30,9 @@ const getJsonMenu = async (menuUrl) => {
 };
 
 const getNews = async () => {
-    const response = await getJsonMenu('https://external.api.yle.fi/v1/teletext/pages/100.json?app_id=072f825b&app_key=921f3b699a881eab808884e74f4be799');
+    const response = await getJsonNews('https://external.api.yle.fi/v1/teletext/pages/102.json?app_id=072f825b&app_key=921f3b699a881eab808884e74f4be799');
     const news = await response;
-    showReport(news);
+    showNews(news);
 };
 
 getNews();

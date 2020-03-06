@@ -40,6 +40,10 @@ header {
     font-family: 'Raleway';
 }
 
+ul {
+    list-style-type: none;
+}
+
 .metropolia {
     display: flex;
     justify-content: left;
@@ -64,7 +68,6 @@ main {
 
 #weather {
     padding: 1em;
-    list-style-type: none;
     font-family: 'Noto Sans JP';
 }
 
@@ -109,17 +112,36 @@ main {
 }
 
 .hsl-list {
-    list-style-type: none;
     font: 1.1em 'Rubik';
     padding-top: 0.5em;
     text-align: left;
 }
 
 .hsl-row {
-    list-style-type: none;
     display: inline-flex;
 }
 
 .hsl-row > li {
     padding-right: 1em;
+}
+
+.w-icon-sm {
+    width:3em;
+    padding-right: 0.5em;
+}
+
+.w-icon-md {
+    max-width: 10em;
+}
+
+.weather-graphic {
+    width: 200px;
+    height: 200px;
+    display: none;
+}
+
+#weather > li {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
 }

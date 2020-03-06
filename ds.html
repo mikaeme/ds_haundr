@@ -152,17 +152,30 @@
             <div class="window small-window" id="r1-w3">
                 <h1>Sää</h1>
                 <ul id="weather">
-                    <li id="temp"></li>
-                    <li id="wind"></li>
+                    <li id="temp"><img class="w-icon-sm" id="thermo-01" src="./img/thermo_01.png" alt=""></li>
+                    <li id="wind"><img class="w-icon-sm" id="wind-01" src="./img/wind_01.png" alt=""></li>
                     <li id="cloud"></li>
                 </ul>
+                    <div id="cloud-01"><img class="w-icon-md" src="./img/cloud_01.png" alt="cloud"></div>
+                    <div id="cloud-02"><img class="w-icon-md" src="./img/cloud_02.png" alt="cloud"></div>
+                    <div id="cloud-03"><img class="w-icon-md" src="./img/cloud_03.png" alt="cloud"></div>
+                    <div id="sun-01"><img class="w-icon-md" src="./img/sun_01.png" alt="sun"></div>
             </div>
         </section>
         <section class="row">
-            <div class="window small-window" id="r2-w1"></div>
+            <div class="window small-window" id="r2-w1">
+                <div class="window-content">
+                    <ul id="ttext">
+                        <li id="num"></li>
+                        <li id="name"></li>
+                        <li id="time"></li>
+                        <li id="subpage"></li>
+                    </ul>
+                </div>
+            </div>
             <div class="window big-window" id="r2-w2">
                 <div class="window-content">
-                    <div class="hsl-list"></div>
+                    <ul class="hsl-list"></ul>
                 </div>
             </div>
             <div class="window small-window" id="r2-w3"></div>
@@ -171,6 +184,7 @@
 
     <script src="./js/app.js"></script>
     <script src="./js/hsl.js"></script>
+    <script src="./js/teksti-tv.js"></script>
 </body>
 
 </html>
